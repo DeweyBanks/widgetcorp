@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render :partial => 'shared/header' %>
+  <div id="main-container" class="container-fluid">
+    <div class="row-fluid">
+      <%= yield %>
+    </div>
+    <%= render :partial => 'shared/footer' %>
+    <script src="https://use.fontawesome.com/e6bb75f937.js"></script>
+  </div>
 </body>
 </html>
