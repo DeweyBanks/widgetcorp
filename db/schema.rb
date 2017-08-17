@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815183650) do
+ActiveRecord::Schema.define(version: 20170815204110) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -29,5 +29,20 @@ ActiveRecord::Schema.define(version: 20170815183650) do
   end
 
   add_index "users", ["role_id"], name: "index_users_on_role_id"
+
+  create_table "widgets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "price",              precision: 10, scale: 2
+    t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "widgets", ["user_id"], name: "index_widgets_on_user_id"
 
 end

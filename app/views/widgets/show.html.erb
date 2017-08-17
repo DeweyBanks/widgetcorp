@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @widget.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @widget.image.url(:medium) %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@widget.price) %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @widget.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @widget.user.username %>
+</p>
+<%= link_to 'Notify intent to purchase', notify_new_path %><br>
+<%= link_to 'Edit', edit_widget_path(@widget) %> |
+<%= link_to 'Back', widgets_path %>
